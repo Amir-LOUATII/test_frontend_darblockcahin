@@ -16,3 +16,7 @@ Before running the project, make sure you have the following installed:
 Node.js
 npm
 Vite
+
+Node.js npm Vite To get started with this project, follow these steps 1.Clone or download the repository to your local machine. 
+2.Install dependencies using npm: 
+3.Run npm run dev
