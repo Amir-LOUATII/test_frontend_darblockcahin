@@ -25,6 +25,7 @@
               <div class="modal-content">
                 <!-- Shop container with header and items -->
                 <section id="shop-container">
+
                   <header>
                     <!-- Close button for the shop -->
                     <button id="close-btn" title="Close"></button>
@@ -47,12 +48,22 @@
                         <img src="./assets/images/shop/assets/1.png" alt="Item 1" />
                       </div>
                       <span class="item-level">Level 1</span>
-                      <button class="buy-btn">250</button>
+                      <button class="buy-btn" data-itemName="Item 1">250</button>
+                 </div>
+                    </div>
+                    <div class="shop-item">
+                 <div class="item-details">
+                       <div class="item-icon-container">
+                        <img src="./assets/images/shop/assets/2.png" alt="Item 2" />
+                      </div>
+                      <span class="item-level">Level 2</span>
+                      <button class="buy-btn" data-itemName="Item 1">250</button>
                  </div>
                     </div>
 
                   
                   </div>
+                  <p class="message-container"></p>
                 </section>
               </div>
             </div>
@@ -62,6 +73,6 @@
     </main>
 
     <!-- Import the main JavaScript file -->
-    <script src="/src/main.js"></script>
+    <script src="/src/main.js" type="module"></script>
   </body>
 </html>
