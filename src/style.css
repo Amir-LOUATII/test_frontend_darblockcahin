@@ -5,29 +5,27 @@
   font-family: 'ChubbyChoo';
   src: url('../public/assets/fonts/chubby-choo-regular.ttf') format('truetype');
 }
-:root{
-  --primary-color:#ffca28; 
+:root {
+  --primary-color: #ffca28;
   --primary-text-color: #cab3b5;
   --secondary-text-color: #fff;
   --default-margin: 10px;
   --default-padding: 10px;
 }
-*:{
-    margin: 0;
-    padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: 'ChubbyChoo', sans-serif;
-  min-height:100vh;
-width: 100%;
+  min-height: 100vh;
+  width: 100%;
 }
 
 #app {
   width: 100%;
-  height:100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -69,12 +67,13 @@ width: 100%;
   }
 }
 
-#game{
+#game {
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
+
 /*====================*/
 /*   End Global Styles  */
 /*====================*/
@@ -87,24 +86,290 @@ width: 100%;
   position: relative;
   height: 100vh;
   width: auto;
-  max-width:100%;
-  background: url('/public/assets/images/shop/SHOP_BG.png') no-repeat center center;
+  max-width: 100%;
   background-size: cover;
   position: relative;
 }
 
-
-#game-container:before{
-  position:absolute;
-  content:"";
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background-color:rgba(160, 152, 173,0.5);
-  z-index:1;
+#background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
+
+#background-container img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.game-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(160, 152, 173, 0.5);
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
 /*====================*/
-/*   End Game General  Styles  */
+/*   End Game General Styles  */
 /*====================*/
 
+/*====================*/
+/*   Start Shop widget   */
+/*====================*/
+#shop-container {
+  max-width: 731px;
+  background-image: url("../public/assets/images/shop/SHOP_BG_WITHTITLE.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  min-width: 300px;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 992px) {
+  #shop-container {
+    width: 100%;
+  }
+}
+
+/* Shop Header */
+header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    margin-right: 25px;
+  }
+}
+
+#close-btn {
+  width: 40px;
+  height: 40px;
+  background: url('../public/assets/images/Close.png') no-repeat center/contain;
+  border: none;
+  cursor: pointer;
+}
+
+/* Gas Info */
+#gas-info {
+  margin: 5rem auto 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gas-info img {
+  max-width: 100%;
+  width: 200px;
+}
+
+#items-container {
+  padding: var(--default-padding);
+  padding-right: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 500px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: transparent;
+  max-width: 100%;
+  width: 95%;
+  margin: 0 auto;
+}
+
+#items-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+#items-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+#items-container::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+#items-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+
+#items-container::-webkit-scrollbar-thumb:active {
+  background-color: var(--primary-color);
+}
+
+.shop-item {
+  width: 543px;
+  min-height: 192px;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 0 auto;
+  transition: all 0.3s;
+  background-image: url('../public/assets/images/shop/Itemsbox1_shop.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .shop-item {
+    width: 100%;
+    min-height: 150px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .shop-item {
+    width: 100%;
+    min-height: 1px;
+  }
+}
+
+.shop-item:hover {
+  transform: scale(1.02);
+  background-image: url('../public/assets/images/shop/Itemsbox2_shop.png');
+  transition: transform 0.3s ease;
+}
+
+.shop-item .item-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.shop-item .item-bg img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.shop-item .item-icon-container {
+  position: absolute;
+  top: 20%;
+  left: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.shop-item .item-icon-container img {
+  max-width: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .shop-item .item-icon-container {
+    top: 25%;
+    left: 15%;
+  }
+
+  .shop-item .item-icon-container img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.shop-item .item-level {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-60%, -20%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+  transition: all 0.3s;
+  color: var(--primary-text-color);
+}
+
+@media screen and (max-width: 767px) {
+  .shop-item .item-level {
+    left: 45%;
+    color: var(--secondary-text-color);
+  }
+}
+
+.shop-item .buy-btn {
+  position: absolute;
+  top: 20%;
+  cursor: pointer;
+  right: 25px;
+  width: 160px;
+  height: 80px;
+  transform: translateY(-20%);
+  background-image: url('../public/assets/images/shop/Buy_Button02.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  border: none;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--secondary-text-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.shop-item .buy-btn:active {
+  transform: scale(0.95);
+  background-image: url('../public/assets/images/shop/Buy_Button02_Clicked.png');
+}
+
+@media screen and (max-width: 767px) {
+  .shop-item .buy-btn {
+    right: 15px;
+    width: 120px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+/*====================*/
+/*   End Shop Widget  */
+/*====================*/
