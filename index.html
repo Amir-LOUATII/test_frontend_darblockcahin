@@ -1,13 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Shop Widget</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <main id="app">
+      <!-- Game Container -->
+      <div id="game-container">
+    
+
+        <!-- Shop Widget -->
+      <div class="modal">
+          <section id="shop-container">
+
+          <header>
+            <button id="close-btn" title="Close"></button>
+          </header>
+
+          <!-- Gas Info Section -->
+          <div id="gas-info">
+          <img src="public/assets/images/shop/GAS_shop.png" alt="">
+          </div>
+
+          <!-- Shop Items Section -->
+          <div id="items-container">
+   
+            <!-- Shop Item 2 -->
+            <div class="shop-item">
+              <!-- <div class="item-bg">
+                <img src="./public/assets/images/shop/Itemsbox2_shop.png" alt="Item Background" />
+              </div> -->
+              <div class="item-icon-container"><img src="/public/assets/images/shop/assets/1.png" alt=""></div>
+              <span class="item-level">level 1</span>
+              <button class="buy-btn">
+            250
+              </button>
+            </div>
+            <div class="shop-item">
+             
+              <div class="item-icon-container"><img src="/public/assets/images/shop/assets/1.png" alt=""></div>
+              <span class="item-level">250</span>
+              <button class="buy-btn">
+            250
+              </button>
+            </div>
+            <div class="shop-item">
+            
+              <div class="item-icon-container"><img src="/public/assets/images/shop/assets/1.png" alt=""></div>
+              <span class="item-level">250</span>
+              <button class="buy-btn">
+            250
+              </button>
+            </div>
+ 
+          </div>
+
+      
+        </section>
+      </div>
+      </div>
+    </main>
   </body>
 </html>
