@@ -1,5 +1,6 @@
 Test_frontend_darblockcahin
-Widget Integration Test Overview This project demonstrates the integration of a simple widget using Vanilla JavaScript, HTML, CSS, and Vite as the build tool. The widget simulates an e-commerce item display, 
+Widget Integration Test Overview 
+This project demonstrates the integration of a simple widget using Vanilla JavaScript, HTML, CSS, and Vite as the build tool. The widget simulates an e-commerce item display, 
 allowing users to add items to a cart by clicking a button. The cart message updates dynamically, showing the item added to the cart.
 
 Purpose The goal of this test is to verify the proper integration of:
