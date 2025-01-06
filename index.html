@@ -8,20 +8,25 @@
   </head>
   <body>
     <main id="app">
+      <!-- Game container with background and content -->
       <div id="game-container">
-            <div id="background-container">
-              <img
-                src="./public/assets/images/shop/SHOP_BG.png" 
-                alt="Background Image" 
-                class="background-image"
-              />
-              <div class="overlay"></div>
-              <div id="content">
-                 <div id="modal" class="modal">
-        <div class="modal-content">
-        
-          <section id="shop-container">
+        <div id="background-container">
+          <!-- Background image for the shop -->
+          <img
+            src="./public/assets/images/shop/SHOP_BG.png" 
+            alt="Background Image" 
+            class="background-image"
+          />
+          <div class="overlay"></div>
+
+          <!-- Modal content -->
+          <div id="content">
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <!-- Shop container with header and items -->
+                <section id="shop-container">
                   <header>
+                    <!-- Close button for the shop -->
                     <button id="close-btn" title="Close"></button>
                   </header>
 
@@ -35,48 +40,28 @@
 
                   <!-- Shop Items Section -->
                   <div id="items-container">
-                    <!-- Repeat shop-item for each item -->
+                    
                     <div class="shop-item">
-                      <div class="item-icon-container">
+                 <div class="item-details">
+                       <div class="item-icon-container">
                         <img src="./assets/images/shop/assets/1.png" alt="Item 1" />
                       </div>
                       <span class="item-level">Level 1</span>
                       <button class="buy-btn">250</button>
+                 </div>
                     </div>
 
-                    <!-- More shop items... -->
+                  
                   </div>
                 </section>
-        </div>
-      </div>
-                
               </div>
             </div>
           </div>
-     
-      <!-- End Modal Structure -->
+        </div>
+      </div>
     </main>
-    <script>
-      // JavaScript to handle modal open/close
-      const modal = document.getElementById("modal");
-      const closeBtn = document.querySelector(".close-btn");
 
-      // Function to open the modal
-      function openModal() {
-        modal.style.display = "block";
-      }
-
-      // Function to close the modal
-      closeBtn.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      // Close modal when clicking outside of the modal content
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-    </script>
+    <!-- Import the main JavaScript file -->
+    <script src="/src/main.js"></script>
   </body>
 </html>

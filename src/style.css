@@ -6,7 +6,9 @@
   src: url('/assets/fonts/chubby-choo-regular.ttf') format('truetype');
 }
 :root {
-  --primary-color: #ffca28;
+  --primary-color: #ebd7d8;
+ --secondary-color: #c9a1a1;
+ --tertiary-color: #ffca28;
   --primary-text-color: #cab3b5;
   --secondary-text-color: #fff;
   --default-margin: 10px;
@@ -215,7 +217,7 @@ header {
 }
 
 #items-container::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
   border-radius: 10px;
 }
 
@@ -224,16 +226,17 @@ header {
 }
 
 #items-container::-webkit-scrollbar-thumb:hover {
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
 }
 
 #items-container::-webkit-scrollbar-thumb:active {
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
 }
 
 .shop-item {
-  width: 543px;
-  min-height: 192px;
+  width: 100%;
+  max-width: 543px;
+  min-height: 195px;
   border-radius: 15px;
   position: relative;
   margin: 0 auto;
@@ -241,7 +244,7 @@ header {
   background-image: url('../public/assets/images/shop/Itemsbox1_shop.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
   overflow: hidden;
 }
 
@@ -249,13 +252,14 @@ header {
   .shop-item {
     width: 100%;
     min-height: 150px;
+
   }
 }
 
 @media screen and (max-width: 374px) {
   .shop-item {
     width: 100%;
-    min-height: 1px;
+    min-height: 150px;
   }
 }
 
@@ -265,31 +269,37 @@ header {
 
 }
 
-.shop-item .item-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+.shop-item .item-details{
+  position:absolute;
+  top:8px;
+  left:50%;
+  transform:translate(-50%,0);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color: var(--primary-color);
+  width:90%;
+  max-width: 95%;
+height:fit-content;
+  max-height: 100%;
+margin: 0 auto;
+padding: 0.5rem;
+transition: background-color 0.3s;
+
+
 }
 
-.shop-item .item-bg img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
+
 
 .shop-item .item-icon-container {
-  position: absolute;
-  top: 20%;
-  left: 14%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
+width: 90px;
+height: 90px;
+background-color: transparent;
+border-radius:20px;
+background-color:var(--secondary-color);
+padding:0.5rem;
+
+
 }
 
 .shop-item .item-icon-container img {
@@ -298,23 +308,39 @@ header {
   height: 50px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
+  .shop-item {
+
+    padding:0;
+  }
+  .shop-item .item-details {
+
+    width: 100%;
+    max-width: 100%;
+    height:fit-content;
+    text-align:center;
+  }
   .shop-item .item-icon-container {
-    top: 25%;
-    left: 15%;
+    width: 60px;
+    height: 60px;
   }
 
   .shop-item .item-icon-container img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 }
+.shop-item:hover .item-details{
+  background-color:var(--secondary-color);
 
+
+}
+
+.shop-item:hover .item-icon-container{
+  background-color:var(--primary-color);
+}
 .shop-item .item-level {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-60%, -20%);
+
   font-size: 1.5rem;
   font-weight: bold;
   z-index: 2;
@@ -331,13 +357,9 @@ header {
 }
 
 .shop-item .buy-btn {
-  position: absolute;
-  top: 20%;
   cursor: pointer;
-  right: 25px;
   width: 160px;
   height: 80px;
-  transform: translateY(-20%);
   background-image: url('../public/assets/images/shop/Buy_Button02.png');
   background-size: cover;
   background-position: center;
